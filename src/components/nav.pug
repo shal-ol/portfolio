@@ -1,0 +1,6 @@
+mixin nav(className,navItems)
+  nav(class='nav nav--' + `${className}`)
+    ul.nav__list
+      each navItem in navItems
+        li.nav__item
+          a.nav__link(href='#')= navItem    

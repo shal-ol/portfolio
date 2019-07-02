@@ -1,0 +1,53 @@
+.contacts__slider{
+    display: flex;
+    margin-bottom: 202px;
+    .slider{
+        position: relative;
+        &__content{
+            width: 880px;
+            height: 100%;
+            display: inline-block;
+
+        }
+        &__content-list{
+            white-space: nowrap;
+            height: 100%;
+        }
+        &__content-review{
+            display: inline-block;
+			width: 50%;
+            height: 100%;
+        }
+        
+        &__controls{
+        top: -8rem;
+        right: 15.9375rem;
+        position: absolute;
+
+        }
+        &__btn{
+            position: absolute;
+            right: 50%;
+            border: solid 1px #fff;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            &-next{
+                right: -0.875rem; 
+            }
+            &-pref{
+                left: -6.875rem; 
+                transform: rotate(180deg);       
+            }
+        }
+            &__btnpref-pict, &__btnnext-pict{
+                height: 12px;
+                width: 10px;
+                fill: #fff;
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+    }
+}

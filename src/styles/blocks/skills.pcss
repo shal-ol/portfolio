@@ -1,0 +1,86 @@
+.skills{
+    position: relative;
+    height: 1020px;
+    background-image: url('~images/content/skills_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &__header{
+        font-size:30px;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 59px;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+    }
+    &__descr{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 237px;
+    z-index: 1;
+    }
+    &__text{
+        font-size:16px;
+        color: #8a8a8a;
+        font-weight: 600;
+        line-height:30px;
+        width: 80%;
+        margin-bottom: 85px;
+    }
+    &__presintation{
+        display: flex;
+        flex-direction: column;
+        margin-right: 90px;
+        z-index: 1;
+    }
+    &__presintation-text{
+        font-size:24px;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 19px;
+    }
+        &__presintation-block
+    {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 31px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__presintation-list
+    {
+        display: flex;
+    }
+    &__presintation-circle{
+        position: relative;
+        margin-right: 30px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    &__presintation-circle__text{
+        position: absolute;
+        top: 50%;
+	    left: 50%;	
+        transform: translate(-50%,-50%);
+        font-size:18px;
+        color: #8a8a8a;
+        font-weight: bold;
+        text-align: center;
+        vertical-align:middle;
+    }
+
+
+
+    &__decor{
+        position:absolute;
+        bottom: -90px;
+        left: 0;
+    }
+}

@@ -1,0 +1,29 @@
+.slider
+	.slider__images
+		ul.slider__images-list
+			li.slider__images-item
+				+image('content/work_big_1.png', 'slider__images-pict')
+			li.slider__images-item
+				+image('content/work_big_1.png', 'slider__images-pict')
+			li.slider__images-item
+				+image('content/work_big_1.png', 'slider__images-pict')
+			li.slider__images-item
+				+image('content/work_big_1.png', 'slider__images-pict')
+	ul.slider__imagesmin
+		li.slider__imagesmin-item.slider__imagesmin-item--active
+			+image('content/work_1.png', 'slider__imagesmin-pict')
+			.slider__imagesmin-text 2
+		li.slider__imagesmin-item
+			+image('content/work_2.png', 'slider__imagesmin-pict')
+			.slider__imagesmin-text 3
+		li.slider__imagesmin-item
+			+image('content/work_3.png', 'slider__imagesmin-pict')
+			.slider__imagesmin-text 4
+		li.slider__imagesmin-item
+			+image('content/work_4.png', 'slider__imagesmin-pict')
+			.slider__imagesmin-text 5
+	.slider__controls
+		a.slider__btn.slider__btn-next(href="#")
+			+icon('arrow-down', 'slider__btnnext-pict slider__btn-pict')
+		a.slider__btn.slider__btn-pref.slider__btn--blocked(href="#")
+			+icon('arrow-down', 'slider__btnpref-pict slider__btn-pict ')
