@@ -26,9 +26,10 @@
 
         }
         &__btn{
+            color: #fff;
             position: absolute;
             right: 50%;
-            border: solid 1px #fff;
+            border: solid 1px currentcolor;
             border-radius: 50%;
             height: 50px;
             width: 50px;
@@ -39,11 +40,14 @@
                 left: -6.875rem; 
                 transform: rotate(180deg);       
             }
+            &:hover{
+                color: #606365;
+            }
         }
             &__btnpref-pict, &__btnnext-pict{
                 height: 12px;
                 width: 10px;
-                fill: #fff;
+                fill: currentcolor;
                 position: absolute;
                 top:50%;
                 left: 50%;
