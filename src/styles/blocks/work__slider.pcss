@@ -1,12 +1,20 @@
 .work__slider{
-    display: flex;
+
     .slider{
         position: relative;
         &__images{
-            width: 976px;
+
             height: 100%;
+            width: 100%;
             display: inline-block;
             overflow: hidden;
+              /* @include desktop() {    
+            width: 630px;
+    } */
+        &__images-pict{
+        object-fit: cover;
+        width: 976px;
+        }
         }
         &__images-list{
             white-space: nowrap;
@@ -16,44 +24,73 @@
         }
         &__imagesmin{
             position:absolute;
-            bottom: -24.5rem;
+            bottom: 72px;
             right:0;
-            height: 100%;
-            display: inline-block;            
+            display: inline-block;
+            width: 73%;
+            max-height: 102px;
+            white-space: nowrap;
+            overflow: hidden;
+                @include desktop() {    
+                width: 84%;
+                max-height: 7rem;
+                bottom: 3.5rem;
+            }
+        }
+           &__imagesmin-pict{
+        object-fit: cover;
         }
         &__imagesmmin-list{
             white-space: nowrap;
         }
         &__imagesmin-item{
             display: inline-block;
+            width: 25%;
             &--active{                
                 border: solid 2px #f29400;
-                .slider__imagesmin-text{
-                    display:block;
             }
+                @include desktop() {    
+                width: 11.9rem;
+            }
+            &:hover{
+                cursor:pointer;
             }
         }
         &__controls{
-            bottom: 64px;
-            right: -49px;
+            display:flex;
+            flex-direction:column;
+            bottom: 4.6rem;
+            right: -50px;
             position: absolute;
-            height:100px;
             width:50px;
-            background-color: #2d3c4e;
+            height:17.7%;
+                @include desktop() {    
+                height: 26%;
+                bottom: 3.7rem;
+            }
+                
+            
         }
         &__btn{
-            position: absolute;
-            right: 50%;
+            position:relative;
+            height:50%;
+            width:100%;
+            background-color: #2d3c4e;
+            outline: none;
+            border: none; 
+            &:hover{
+              background-color: #5500f2;  
+            }
             &--blocked{
                 .slider__btn-pict{
                 fill:#5c6876;
+                cursor:default;
                 }
+            &:hover{
+                background-color: #2d3c4e;  
             }
-            &-next{
-                bottom:4.125rem;       
             }
             &-pref{
-                top:4.125rem; 
                 transform: rotate(180deg);       
             }
         }
@@ -61,16 +98,37 @@
             height:10px;
             width: 0.5rem;
             fill: #fff;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
         }
-        &__imagesmin-text{
+        &__numbers{
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            @include desktop() {    
+                bottom: 1.7rem;
+                right: 44px;
+            }
+
+
+        }
+        &__numbers-item{
             font-size: 400px;
             font-weight: 800;
             color: #f0f0f0;
             display: none;
             position: absolute;
-            bottom: 427px;
-            right: -157px;
+            bottom: 2.6875rem;
+            right: -10.8125rem;
             z-index:-1;
-                }
+            &--active{
+                display: block;
+            }
+            @include desktop() {    
+            font-size: 300px;
+            }
+            }
     }
 }

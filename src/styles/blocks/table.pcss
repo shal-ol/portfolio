@@ -2,6 +2,10 @@
     border-collapse: separate;
     border-spacing: 4em 1em;
     margin: 0 -64px;
+        @include tablets() {
+        margin: 0;
+        border-spacing: 2.5em 1em;
+    }
     &__par{
         color: 'text-color';
         font-weight: 400;

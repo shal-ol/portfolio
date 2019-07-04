@@ -1,20 +1,38 @@
 .work{
 	height: 1090px;
+	  @include desktop() {
+      height: 52.375rem;
+    }
 	&__header{
 	color: #2d3c4e;
 	margin-bottom: 94px;
+		@include desktop() {    
+		margin-bottom: 3.875rem;
+		}	
 	}
 	&__container{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+			@include desktop() {    
+			margin-left: 54px;
+      }
+	
 	}
 	&__content{
 	display: flex;
 	justify-content: space-between;
+			@include desktop() {    
+			margin-left: 0;
+      }
 	}
 	&__slider{
-	margin-right: 161px;
+    margin-right: 10.0625rem;
+    width: 85%;
+		display:flex;	
+		@include desktop() {    
+			margin-right: 7.0625rem;
+      }
 	}
 	&__skills-list{
 			display: flex;
@@ -26,6 +44,12 @@
 			padding: 10px 19px;
 			margin-right: 20px;
 			color: #6d7680;
+	}
+	&__descr{
+		width: 30%;
+		@include desktop() {    
+    	width: 27%;
+      }
 	}
 	&__descr-title{
 			font-size:30px;

@@ -32,6 +32,12 @@ body {
   width: 95%;
   // width: 1490px;
   height:100%;
+  @include desktop() {
+    width: 1080px;
+  }
+  @include tablets() {
+    width: 49.125rem;       
+  }
   
   @include phones {
     width: 85%;

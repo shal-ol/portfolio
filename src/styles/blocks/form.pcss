@@ -4,6 +4,10 @@
     display:flex;
     flex-direction: column;
     width: 62%;
+    @include desktop() {    
+        width: 89%;
+    }
+
     }
     &__row{
     display:flex;
@@ -11,7 +15,7 @@
 
     &__block{
     display:flex;
-    flex-direction: column; 
+    flex-direction: column-reverse; 
     width:100%;
     position: relative;
     margin-bottom: 40px;
@@ -26,6 +30,20 @@
     font-size: 18px;
     font-weight: bold;
     padding: 20px 50px;
+    &::placeholder{
+        font-weight:600;
+        font-size: 16px;
+    }
+    &:focus::placeholder{
+        color:transparent;
+    }
+    &:focus{
+        border-bottom: 2px solid #ff9a00;
+    }
+    &:focus + .form__field-img{
+        fill: #ff9a00;
+    }
+
     &:last-child{
         margin-right: 0;
     }
@@ -33,14 +51,16 @@
     }
      &__block-title{
         margin-left: 3rem;
-        color: #616365;
+        color: transparent;
+        font-weight: 600;
+        width:100%;
     }
         &__field-img{
         fill: #616365;
         height: 30px;
         width: 30px; 
         position: absolute;
-        top:0;
+        top: 2.5rem;
         left:0;
     }
     &__button-submit{
@@ -49,12 +69,15 @@
     font-weight: bold;
     text-transform: uppercase;
     border: none;
-    padding: 1.7rem 5.125rem;
+    padding: 1.8rem 7.4rem;
     outline: none;
-    background-color:#ef8700;
-        &:hover{
-        color: #ef8700;
-        background-color:#fff;   
-        }
+    background: linear-gradient(90deg, #ec7e00, #f29400);
+    @include desktop() {    
+        padding: 1.9rem 8.125rem;
+    }
+        
+    }
+    &:hover{
+        cursor:pointer;
     }
 }
