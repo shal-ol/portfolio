@@ -6,13 +6,17 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    script(src="https://cdn.jsdelivr.net/npm/vue")
     title Portfolio | main page
   body
     .wrapper
       .maincontent
         include components/welcome
         include components/about
-        include components/skills
+        #skills-container
         include components/work
         include components/contacts
         include components/footer
+
+
+        include components/entery

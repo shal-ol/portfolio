@@ -1,29 +1,38 @@
 .welcome{
-    background-image: url('~images/content/train_bridge.png');
-    background-repeat: no-repeat;
-    background-size: cover;
     color: #fff;
-    height: 1080px;
+    max-height: 1450px;
+    background-color: #1b1f22;
     @include desktop() {
         height: 1340px;
-        background-image: url('~images/content/train_bridge1200.png');
     }
     @include tablets() {
         height: 1100px;    
         background-image: url('~images/content/train_bridge768.png');    
+        background-size:cover;
     }
+        @include phones() {
+        height: 45.75rem;    
+        background-image: url('~images/content/train_bridge320.png');
+    }
+    &__container{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        }
     &__content{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 1080px;
-    @include desktop() {    
+    @include desktop() {
         height: 48rem;
     }
 }
     &__text{
         position: relative;
+
         @include desktop() {
             display:flex;            
     }
@@ -32,6 +41,9 @@
             align-items: center;
             margin-bottom: 24.875rem;
     }
+    	@include phones() {
+        margin-bottom: 27.875rem;
+    }        
     }
     &__text-title{
         position: absolute;
@@ -50,6 +62,9 @@
             margin-right: 0;
             margin-bottom: 25px;
     }
+        @include phones() {
+        margin-bottom: 0.5625rem;
+    }        
     }
     &__text-name{
         font-size: 72px;

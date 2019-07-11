@@ -30,6 +30,19 @@
     }
     &--footer{
     margin-bottom: 3.75rem;
+        @include phones() {
+        margin-bottom: 1.9rem;
+    } 
+    .nav{
+
+        &__list{
+    @include tablets() {
+        flex-wrap: wrap;
+        line-height: 3rem; 
+    } 
+        
+    }
+    }   
     }
     &--header{
         @include tablets() {
