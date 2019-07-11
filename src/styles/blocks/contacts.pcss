@@ -1,9 +1,13 @@
 .contacts{    
     position: relative;
     height: 1375px;
-    background-image:linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0) ), url('~images/content/contacts_bg.png');
+    background-image:linear-gradient(to right, rgba( #1b1f22, 1), rgba( #1b1f22, 0) ), url('~images/content/contacts_bg.png');
     background-repeat: no-repeat;
     background-size: cover;
+     @include desktop() {    
+        height: 92.25rem;
+        background-image:linear-gradient(to right, rgba( #1b1f22, 0.8), rgba( #1b1f22, 0.8) ), url('~images/content/contacts_bg.png');
+        }  
     &__container{
     display: flex;
     flex-direction: column;
@@ -16,21 +20,35 @@
         position: absolute;
         bottom: 150px;
         right: 165px;
+        @include desktop() {    
+            bottom: 10.375rem;
+            right: 2.3125rem;
+        }  
     }
         &__decor-leaf2{
         position: absolute;
         bottom: 598px;
         right: 180px;
+        @include desktop() {    
+            bottom: 40.375rem;
+            right: 3.25rem;
+        }  
     }
         &__decor-leaf3{
         position: absolute;
         top: 444px;
         right: 352px;
+        @include desktop() {    
+            top: 29.75rem;
+            right: 15rem;
+        }   
     }
         &__decor-leaf4{
         position: absolute;
         top: -175px;
         right:0;
+        @include desktop() {    
+            right: -122px;
+        }            
     }
-
-    }
+}

@@ -2,18 +2,18 @@
 	form.form__tag(action="")
 		.form__row.form__row-double
 			label.form__block(for="")
-				span.form__block-title Введите ваше Имя
-				input.form__input.form__field(type="text")
+				input.form__input.form__field(type="text" placeholder="Введите ваше Имя")
 				+icon('user', 'form__field-img')
+				span.form__block-title Введите ваше Имя
 			label.form__block(for="")
-				span.form__block-title Введите ваш email
-				input.form__input.form__field(type="text")
+				input.form__input.form__field(type="email" placeholder="Введите ваш email")
 				+icon('envelope', 'form__field-img')
+				span.form__block-title Введите ваш email
 		.form__row
 			label.form__block(for="")
-				span.form__block-title Сообщение к письму
-				textarea.form__textarea.form__field(type="text")
+				textarea.form__textarea.form__field(type="text" placeholder="Сообщение к письму")
 				+icon('message', 'form__field-img')
+				span.form__block-title Сообщение к письму
 		.form__row
 			.form__button
 				button.form__button-submit(type="submit")

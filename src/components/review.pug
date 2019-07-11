@@ -5,7 +5,7 @@ mixin review(text, img, name, pos)
 			p.review__text #{text}
 			.review__autor
 				.review__autor-photo 
-					+image('content/rev_'+ img +'.png', 'review__autor-pict')
+					+image('content/rev_'+ img +'.png', 'review__autor-pict', name)
 				.review__autor-info
 					.review__autor-name #{name}
 					.review__autor-pos #{pos}

@@ -13,15 +13,27 @@
         margin-right: 55px;
         &:last-child{
         margin-right: 0px;
+        
         }
+        @include desktop() {
+        margin-right: 4.5rem;
+    }
+
     }
     &__link{
         text-decoration: none;
         &:hover{
-            color: #706a65;
+            color: #ff9a00;
+            text-decoration: underline;
+            cursor:pointer;
         }
     }
     &--footer{
     margin-bottom: 3.75rem;
+    }
+    &--header{
+        @include tablets() {
+        display: none;        
+    }
     }
 }

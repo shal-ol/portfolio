@@ -4,12 +4,12 @@
 			ul.slider__content-list
 				li.slider__content-review
 					include review
-					+review('Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'dmitry', 'Ковальчук Дмитрий', 'Основатель Loftschool')
+					+review('Этот девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!', 'dmitry', 'Ковальчук Дмитрий', 'Основатель Loftschool')
 				li.slider__content-review
 					include review
 					+review('Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах', 'vladimir', 'Владимир Сабанцев', 'Преподаватель')
 			.slider__controls
-				a.slider__btn.slider__btn-next(href="#")
+				button.slider__btn.slider__btn-next
 					+icon('arrow-down', 'slider__btnnext-pict')
-				a.slider__btn.slider__btn-pref(href="#")
+				button.slider__btn.slider__btn-pref
 					+icon('arrow-down', 'slider__btnpref-pict')

@@ -2,28 +2,29 @@
 	.slider__images
 		ul.slider__images-list
 			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict')
+				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 1')
 			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict')
+				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 2')
 			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict')
+				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 3')
 			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict')
+				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 4')
 	ul.slider__imagesmin
 		li.slider__imagesmin-item.slider__imagesmin-item--active
-			+image('content/work_1.png', 'slider__imagesmin-pict')
-			.slider__imagesmin-text 2
+			+image('content/work_1.png', 'slider__imagesmin-pict', 'мини-слайд 1')
 		li.slider__imagesmin-item
-			+image('content/work_2.png', 'slider__imagesmin-pict')
-			.slider__imagesmin-text 3
+			+image('content/work_2.png', 'slider__imagesmin-pict', 'мини-слайд 2')
 		li.slider__imagesmin-item
-			+image('content/work_3.png', 'slider__imagesmin-pict')
-			.slider__imagesmin-text 4
+			+image('content/work_3.png', 'slider__imagesmin-pict', 'мини-слайд 3')
 		li.slider__imagesmin-item
-			+image('content/work_4.png', 'slider__imagesmin-pict')
-			.slider__imagesmin-text 5
+			+image('content/work_4.png', 'slider__imagesmin-pict', 'мини-слайд 4')
+	ul.slider__numbers
+		li.slider__numbers-item.slider__numbers-item--active 2
+		li.slider__numbers-item 2
+		li.slider__numbers-item 3
+		li.slider__numbers-item 4
 	.slider__controls
-		a.slider__btn.slider__btn-next(href="#")
+		button.slider__btn.slider__btn-next
 			+icon('arrow-down', 'slider__btnnext-pict slider__btn-pict')
-		a.slider__btn.slider__btn-pref.slider__btn--blocked(href="#")
+		button.slider__btn.slider__btn-pref.slider__btn--blocked
 			+icon('arrow-down', 'slider__btnpref-pict slider__btn-pict ')
