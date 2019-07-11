@@ -4,6 +4,37 @@
   }
 }
 
+@mixin forParallaxBig() {
+  @media screen and (max-width: 10000px) {
+    @content;
+  }
+}
+
+@mixin forParallax() {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin forParallax1440() {
+  @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin forParallax960() {
+  @media screen and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin forParallax800() {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+
 @mixin desktop() {
   @media screen and (max-width: $bp-desktop) {
     @content;

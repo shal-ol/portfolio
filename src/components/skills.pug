@@ -1,22 +1,30 @@
-section.skills
-	.container
-		.skills__content
-			.skills__descr
-				h2.skills__header Чем я могу быть полезна вам
-				p.skills__text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-			.skills__presintation
-				.skills__presintation-block
-					.skills__presintation-text Front-end
-					.skills__presintation-list
-						+persent('-25s', 'HTML5')
-						+persent('-13s', 'CSS3')
-						+persent('-75s', 'Javascript')
-						+persent('-25s', 'Jquery и Vue.js')
-				.skills__presintation-block
-					.skills__presintation-text Workflow
-					.skills__presintation-list
-						+persent('-13s', 'GIT')
-						+persent('-25s', 'Terminal')
-						+persent('-50s', 'Gulp')
-						+persent('-37s', 'Webpack')
-			+image('content/skills_hend.png', 'skills__decor', 'декор')
+script(type="text/x-template")#skills-list
+	section.skills
+		.container
+			.skills__content
+				.skills__descr
+					h2.skills__header Чем я могу быть полезна вам
+					p.skills__text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+				.skills__presintation
+					.skills__item(v-for="skill in skills")
+						row(
+							:skill="skill"
+						)
+				+image('content/skills_hend.png', 'skills__decor', 'декор')
+
+script(type="text/x-template")#skills-block
+	.skills__presintation-block
+		.skills__presintation-text {{skill.skillGroup}}
+		.skills__presintation-list
+			.skills__presentattion-item(v-for="(skillPersent, skillName) in skill.skills")
+				skill(
+					:skillName="skillName",
+					:skillPersent="skillPersent"
+				)
+
+script(type="text/x-template")#skills-circle
+	.skills__presintation-circle
+		svg(class="persent" viewbox="0 0 100 100" )
+				circle(cx="50" cy="50" r="40" class="persent__circle persent__circle_under")
+				circle(cx="50" ref="circle" cy="50" r="40" class="persent__circle persent__circle_above")
+		.skills__presintation-circle__text {{skillName}}
