@@ -1,13 +1,16 @@
 .work__slider{
-    .slider__imagesmin-item{ .active{    
+    .slider__imagesmin-item.active{    
             border: solid 2px #f29400;
-    }
-    }
+    }    
     .slider{
         position: relative;
         width: 100%;
         display: flex;
         justify-content: space-between;
+            @include tablets() {
+                flex-direction: column;
+                justify-content: center;
+			}
         &__images{
             position: relative;
             width: 65.5%;
@@ -22,11 +25,26 @@
                 top: -4rem;
                 right: -10.9rem;
                 z-index: -1;
+                @include desktop() {
+                    top: -4.9rem;
+                    font-size: 300px;
+                    right: -7.9rem;
             }
-                }   
-              /* @include desktop() {    
-            width: 630px;
-    } */
+                @include tablets() {
+                    display: none;
+			}
+            }
+                @include desktop() {
+                width: 61%;
+                margin-right: 7.15rem;
+            }
+                @include tablets() {
+                width: 100%;
+                margin-right: 0rem;
+                margin-bottom: 4rem;
+			}
+        }   
+
         &__images-pict{
         object-fit: cover;
         width: 976px;
@@ -51,7 +69,7 @@
             white-space: nowrap;
             overflow: hidden;
                 @include desktop() {    
-                width: 84%;
+                width: 85%;
                 max-height: 7rem;
                 bottom: 3.5rem;
             }
@@ -94,16 +112,16 @@
             width:50px;
             height:17.7%;
                 @include desktop() {    
-                height: 26%;
-                bottom: 3.7rem;
+                height: 6.7rem;
+                bottom: 3.8rem;
             }
             @include tablets() {
                 bottom: 2.7rem;
 			}        
             @include phones() {
-				height: 50%;
+				height: 6.7rem;
                 right: -0.125rem;
-                bottom: 0.55rem;
+                bottom: 0.3rem;
 			}
         }
         &__btn{

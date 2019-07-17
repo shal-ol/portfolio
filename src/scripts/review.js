@@ -13,11 +13,12 @@ new Vue({
       reviews:[],
       strafe:0,
       flickityOptions: {
-      groupCells: 2,
+      groupCells: '100%',
       prevNextButtons: false,
       pageDots: false,
       wrapAround: false,
-      freeScroll: false
+      freeScroll: false,
+      draggable: false
       }
     }
   },

@@ -53,9 +53,8 @@
 	}
 	&__slider{
 		display:flex;	
-		@include desktop() {    
-			margin-right: 7.0625rem;
-			 width: 70%;
+		@include desktop() {
+			width: 100%;
     }
 		@include tablets() {
 			margin-right: 0;
@@ -69,6 +68,9 @@
 	&__skills-list{
 			display: flex;
 			margin-bottom: 34px;
+		@include tablets() {
+			margin-bottom: 1.5rem;
+		}
 		@include phones() {
 			margin-bottom: 1.125rem;
 		}
@@ -83,10 +85,10 @@
 	&__descr{
 		width: 23%;
 		@include desktop() {    
-    	width: 38%;
+    	width: 34%;
       }
 		@include tablets() {
-			width: 65%;
+			width: 78%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -106,6 +108,9 @@
 			color: #2d3c4e;
 			font-weight: bold;
 			margin-bottom: 42px;
+			@include tablets() {
+				margin-bottom: 1.5rem;
+		}
 			@include phones() {    
 			font-size:24px;
 			margin-bottom: 1.625rem;
@@ -117,6 +122,9 @@
 			font-weight: 600;
 			line-height: 30px;
 			margin-bottom: 34px;
+			@include tablets() {
+				margin-bottom: 1.5rem;
+		}
 	}
 	&__descr-ref{
 			height: 16px;

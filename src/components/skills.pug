@@ -23,8 +23,9 @@ script(type="text/x-template")#skills-block
 				)
 
 script(type="text/x-template")#skills-circle
-	.skills__presintation-circle
-		svg(class="persent" viewbox="0 0 100 100" )
-				circle(cx="50" cy="50" r="40" class="persent__circle persent__circle_under")
-				circle(cx="50" ref="circle" cy="50" r="40" class="persent__circle persent__circle_above")
-		.skills__presintation-circle__text {{skillName}}
+	.skills__circle-block
+		.skills__presintation-circle
+			svg(class="persent" viewbox="0 0 100 100" )
+					circle(cx="50" cy="50" r="40" class="persent__circle persent__circle_under")
+					circle(cx="50" ref="circle" cy="50" r="40" class="persent__circle persent__circle_above")
+			.skills__presintation-circle__text {{skillName}}
