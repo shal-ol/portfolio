@@ -7,7 +7,13 @@
      @include desktop() {    
         height: 92.25rem;
         background-image:linear-gradient(to right, rgba( #1b1f22, 0.8), rgba( #1b1f22, 0.8) ), url('~images/content/contacts_bg.png');
-        }  
+        } 
+        @include tablets() {
+        height: 75.25rem;
+		}  
+        @include phones() {
+        height: 85.25rem;
+		}
     &__container{
     display: flex;
     flex-direction: column;
@@ -15,6 +21,13 @@
     }
     &__header{
         margin-bottom: 87px;
+    @include tablets() {
+        margin-bottom: 4.4375rem;
+    }       
+    @include phones() {
+        text-align: center;
+        margin-bottom: 7.4375rem;
+    }      
     }
     &__decor-leaf1{
         position: absolute;
@@ -24,6 +37,14 @@
             bottom: 10.375rem;
             right: 2.3125rem;
         }  
+        @include tablets() {
+            bottom: 11rem;
+            right: -2.6875rem;
+            height: 18%;
+		}
+        @include phones() {
+        display: none;
+		}  
     }
         &__decor-leaf2{
         position: absolute;
@@ -33,6 +54,14 @@
             bottom: 40.375rem;
             right: 3.25rem;
         }  
+        @include tablets() {
+        bottom: 35rem;
+        right: -2.75rem;
+        height: 6%;
+		}
+        @include phones() {
+        display: none;
+		}  
     }
         &__decor-leaf3{
         position: absolute;
@@ -42,6 +71,14 @@
             top: 29.75rem;
             right: 15rem;
         }   
+        @include tablets() {
+        top: 23rem;
+        right: 7rem;
+        height: 10%;
+		} 
+        @include phones() {
+        display: none;
+		}  
     }
         &__decor-leaf4{
         position: absolute;
@@ -49,6 +86,14 @@
         right:0;
         @include desktop() {    
             right: -122px;
-        }            
+        }     
+        @include tablets() {
+        right: -13.625rem;
+        height: 35%;
+        top: -9.9375rem;
+		}   
+        @include phones() {
+        display: none;
+		}     
     }
 }

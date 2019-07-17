@@ -1,27 +1,64 @@
 .work__slider{
-
+    .slider__imagesmin-item.active{    
+            border: solid 2px #f29400;
+    }    
     .slider{
         position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+            @include tablets() {
+                flex-direction: column;
+                justify-content: center;
+			}
         &__images{
-
+            position: relative;
+            width: 65.5%;
             height: 100%;
-            width: 100%;
             display: inline-block;
-            overflow: hidden;
-              /* @include desktop() {    
-            width: 630px;
-    } */
+            &:before{
+                content: attr(data-slide);
+                color:#f0f0f0;
+                font-size: 400px;
+                font-weight: 800;
+                position: absolute;
+                top: -4rem;
+                right: -10.9rem;
+                z-index: -1;
+                @include desktop() {
+                    top: -4.9rem;
+                    font-size: 300px;
+                    right: -7.9rem;
+            }
+                @include tablets() {
+                    display: none;
+			}
+            }
+                @include desktop() {
+                width: 61%;
+                margin-right: 7.15rem;
+            }
+                @include tablets() {
+                width: 100%;
+                margin-right: 0rem;
+                margin-bottom: 4rem;
+			}
+        }   
+
         &__images-pict{
         object-fit: cover;
         width: 976px;
         }
-        }
+
         &__images-list{
             white-space: nowrap;
         }
         &__images-item{
+            display:  none;
+             &--active{
             display: inline-block;
         }
+    }
         &__imagesmin{
             position:absolute;
             bottom: 72px;
@@ -32,10 +69,19 @@
             white-space: nowrap;
             overflow: hidden;
                 @include desktop() {    
-                width: 84%;
+                width: 85%;
                 max-height: 7rem;
                 bottom: 3.5rem;
             }
+            @include tablets() {
+				width: 79%;
+                max-height: 7rem;
+                bottom: 2.5rem;
+			}
+            @include phones() {
+				display: none;
+			}
+
         }
            &__imagesmin-pict{
         object-fit: cover;
@@ -46,7 +92,7 @@
         &__imagesmin-item{
             display: inline-block;
             width: 25%;
-            &--active{                
+            .active{ 
                 border: solid 2px #f29400;
             }
                 @include desktop() {    
@@ -54,6 +100,7 @@
             }
             &:hover{
                 cursor:pointer;
+                border: solid 2px #f29400;
             }
         }
         &__controls{
@@ -65,11 +112,17 @@
             width:50px;
             height:17.7%;
                 @include desktop() {    
-                height: 26%;
-                bottom: 3.7rem;
+                height: 6.7rem;
+                bottom: 3.8rem;
             }
-                
-            
+            @include tablets() {
+                bottom: 2.7rem;
+			}        
+            @include phones() {
+				height: 6.7rem;
+                right: -0.125rem;
+                bottom: 0.3rem;
+			}
         }
         &__btn{
             position:relative;
@@ -81,7 +134,7 @@
             &:hover{
               background-color: #5500f2;  
             }
-            &--blocked{
+                &--blocked{
                 .slider__btn-pict{
                 fill:#5c6876;
                 cursor:default;
@@ -103,17 +156,8 @@
             left: 50%;
             transform: translate(-50%,-50%);
         }
-        &__numbers{
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            @include desktop() {    
-                bottom: 1.7rem;
-                right: 44px;
-            }
-
-
-        }
+      
+        
         &__numbers-item{
             font-size: 400px;
             font-weight: 800;

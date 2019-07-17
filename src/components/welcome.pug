@@ -1,12 +1,12 @@
 section.welcome
-	.container
+	.welcome__paralax
+		include paralax
+	.container.welcome__container
 		include header
 		.welcome__content
 			.welcome__text
 				h1.welcome__text-title Личный сайт веб разработчика
 				.welcome__text-name Ольга Арсеньева
-			//- .welcome__pict
-			//-   +image('content/train.png', 'welcome-img')
 			a.welcome__scroll(href="#")
 				.welcome__scroll-text Скролл
 				+icon('scroll','welcome__scroll-img')

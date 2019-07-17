@@ -5,10 +5,3 @@ mixin icon(name, className)
 
 mixin image(path, className, alt)
   img(src=require(`images/${path}`) class=className alt=alt)
-
-mixin persent(pers, skill)
-  .skills__presintation-circle   
-    svg(class="persent" viewbox="0 0 100 100" preservAspectRatio="none")
-        circle(cx="50" cy="50" r="40" class="persent__circle persent__circle_under")
-        circle(cx="50" cy="50" r="40" class="persent__circle persent__circle_above" style="animation-delay:" + pers)
-    .skills__presintation-circle__text #{skill}

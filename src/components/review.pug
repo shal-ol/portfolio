@@ -1,11 +1,20 @@
-mixin review(text, img, name, pos)
+script(type="text/x-template")#reviews
 	.review
-		+icon('quote', 'review__decor')
-		blockquote.review__blockquote 
-			p.review__text #{text}
-			.review__autor
-				.review__autor-photo 
-					+image('content/rev_'+ img +'.png', 'review__autor-pict', name)
-				.review__autor-info
-					.review__autor-name #{name}
-					.review__autor-pos #{pos}
+		.review__header
+			h2.section__header.review__title Что обо мне говорят
+			.review__controls
+				button(type="button" @click="slide('previous')").review__btn.review__btn-prev
+					+icon('arrow-down', 'review__btnprev-pict')
+				button(type="button" @click="slide('next')").review__btn.review__btn-next
+					+icon('arrow-down', 'review__btnnext-pict')
+		.review__content
+			flickity(ref="flickity" :options="flickityOptions")
+				.review__content-item(v-for="(review, index) in reviews")
+					.review__blockquote 
+						p.review__text {{review.text}}
+						.review__autor
+							.review__autor-photo 
+								img(:src="review['author-pic']").review__autor-pict
+							.review__autor-info
+								.review__autor-name {{review['autor-name']}}
+								.review__autor-pos {{review['autor-pos']}}
