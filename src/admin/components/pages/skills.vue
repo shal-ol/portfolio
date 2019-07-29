@@ -20,7 +20,7 @@
 import section_header from '../section_header'
 import skills_group from '../skills-group.vue'
 import SimpleVueValidator from 'simple-vue-validator'
-import {mapAction, mapState} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 
 
 export default {
@@ -38,7 +38,7 @@ export default {
     })
   },
   methods: {
-    ...mapAction('categories', ["fetchCategories"])
+    ...mapActions('categories', ['fetchCategories'])
   },
   created() {
     this.fetchCategories();
