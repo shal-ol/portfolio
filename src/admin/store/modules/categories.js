@@ -1,7 +1,4 @@
 
-import axios from "axios";
-
-const baseURL = "https://webdev-api.loftschool.com/";
 export default {
   namespaced: true,
   state: {
@@ -15,7 +12,7 @@ export default {
   actions: {
     async fetchCategories({ commit }) {
       try {
-        const response = await this.$axios.get(`${baseURL}/categories`);
+        const response = await this.$axios.get(`/categories`);
         commit("SET_CATEGORIES", response.data.reverse());
         return response;
       } catch (error) {

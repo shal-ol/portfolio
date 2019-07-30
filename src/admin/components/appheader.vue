@@ -6,7 +6,9 @@
           img(src="../../images/content/user.jpg").header__block-img
         .header__block-name Ольга Арсеньева
         .header__block-title Панель администрирования
-      a.header__logout(href="#") Выход
+      router-link(
+        to= "/admin/login"
+      ).header__logout(href="#") Выход
 </template>
 
 

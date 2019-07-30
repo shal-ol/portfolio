@@ -4,8 +4,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 
+
 const routes = [
   {
+    path: '/admin/login',
+    component: () => import("./components/pages/login"),
+  },
+  {    
     path: '/admin',
     component: () => import("./components/pages/skills"),
   },
@@ -13,6 +18,7 @@ const routes = [
     path: '/admin/works',
     component: () => import("./components/pages/works"),
   },
+
   {
     path: '/admin/reviews',
     component: () => import("./components/pages/reviews"),
@@ -20,3 +26,4 @@ const routes = [
 ];
 
 export default new VueRouter({mode: 'history', routes});
+
