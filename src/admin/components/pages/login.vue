@@ -1,13 +1,13 @@
 <template lang="pug">
   .login
     .login__content
-      form.login__form(@submit.prevent="login")
+      form.login__form(@submit.prevent='login')
         .login__form-title Авторизация
         .login__row
           input(
             title="Логин"
             icon="user"
-            v-model="user.login"
+            v-model="user.name"
           )
         .login__row
           input(
@@ -29,16 +29,24 @@ export default {
   data(){
     return{
       user:{
-        login: "",
-        password:""
+        name: 'olgaars-072019',
+        password:'admin'
       }
     }
   },
   methods: {
     async login(){
-      const response = await $axios.post('/login', this.user)
-      console.log(response);
-      
+      try{
+        const {data:{token}} = await $axios.post('/login', this.user);
+
+
+        localStorage.setItem('token', token);
+        $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+        this.$router.replace('/admin');
+      }      
+    catch(e) {
+      console.log(error.response)
+      };
     }
   }
 }

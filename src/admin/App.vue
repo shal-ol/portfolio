@@ -26,7 +26,12 @@ export default {
 
 .admin-wrapper{
 
-
+.blocked {
+  opacity: .5;
+  filter: grayscale(100%);
+  pointer-events: none;
+  user-select: none;
+}
 
   .about{
     &__block{

@@ -6,19 +6,21 @@
           section_header(
             section_header="Блок Обо мне"
           )
-          button.about__btn-add Добавить группу
-        ul.about__content(
-          v-for="category in categories"
-        )
-            li.about__item
-              skills_group(
-                :category="category"
-              )
+          button.about__btn-add(@click="CatAddOn = true") Добавить группу
+        ul.about__content
+          skill_add(v-if="CatAddOn")
+          li.about__item(
+            v-for="category in categories"
+            )
+            skills_group(
+              :category="category"
+            )
 </template>
 
 <script>
 import section_header from '../section_header'
 import skills_group from '../skills-group.vue'
+import skill_add from '../skill_add.vue'
 import SimpleVueValidator from 'simple-vue-validator'
 import {mapActions, mapState} from 'vuex'
 
@@ -30,7 +32,14 @@ export default {
   },
   components:{    
     skills_group,
+    skill_add,
     section_header
+  },
+  data() {
+    return{
+      CatAddOn: false
+    }
+    
   },
   computed: {
     ...mapState("categories",{
