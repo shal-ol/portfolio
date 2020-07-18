@@ -10,14 +10,22 @@
     @include tablets() {
     height: 76rem;
     }
+    @include phones() {
+    height: 94rem;
+	}
+
     &__header{
         font-size:30px;
         color: #fff;
         font-weight: bold;
         margin-bottom: 59px;
         @include tablets() {
-            width: 65%
+            width: 65%;
+            margin-bottom: 1rem;
         }
+        @include phones() {
+        width: 100%;
+	    }
 
     }
     &__content{
@@ -26,6 +34,10 @@
         justify-content: center;
         align-items: flex-end;
         height: 100%;
+        @include tablets() {
+        align-items: center;
+        }
+
     }
     &__descr{
     display: flex;
@@ -40,8 +52,14 @@
         @include tablets() {
         width: 77%;
         text-align: center;
+        align-items: center;
+        margin-top: -16.5rem;
         }
-
+        @include phones() {
+        width: 100%;
+        text-align: left;
+        margin-top: -11.5rem;
+	    }
     }
     &__text{
         font-size:16px;
@@ -50,6 +68,12 @@
         line-height:30px;
         width: 80%;
         margin-bottom: 85px;
+        @include tablets() {
+            margin-bottom: 3.3125rem;
+        }
+        @include phones() {
+        width: 100%;
+	    }
     }
     &__presintation{
         display: flex;
@@ -65,26 +89,45 @@
         color: #fff;
         font-weight: bold;
         margin-bottom: 19px;
+    @include tablets() {
+        text-align: center;
+        font-size:18px;        
+        }
+
+
     }
         &__presintation-block
     {
         display: flex;
         flex-direction: column;
         margin-bottom: 31px;
+
         &:last-child{
             margin-bottom: 0;
+        }
+        @include tablets() {
+            margin-bottom: 3.5rem;
         }
     }
     &__presintation-list
     {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     &__presintation-circle{
         position: relative;
         margin-right: 30px;
         &:last-child{
             margin-right: 0;
+            @include phones() {
+            margin-right: -0.125rem;
         }
+        }
+        @include phones() {
+            margin-right: -0.125rem;
+        }
+        
     }
     &__presintation-circle__text{
         position: absolute;
@@ -116,6 +159,12 @@
         bottom: -5.85rem;
         left: 15.1875rem;
         width: 44%;
+    }
+    @include phones() {
+        transform: rotate(270deg);
+        bottom: -3.99rem;
+        left: 3.3rem;
+        width: 72%;
     }
     }
 }   

@@ -1,11 +1,10 @@
 .about{
+position:relative;
+z-index: 1;
 background: url('~images/content/about_bg.png');
 background-repeat: no-repeat;
 background-size: cover;
-height: 700px;
-display: flex;
-align-items: flex-start;
-flex-direction:row;
+height: 330px;
 font-family:inherit;
     @include desktop() {    
         background: url('~images/content/about_bg1200.png');
@@ -14,40 +13,56 @@ font-family:inherit;
     @include tablets() {
         height: 43.0625rem;
     }
+    @include phones() {
+        height: 61.0625rem;
+    }
 &__container{
+
 display: flex;
 justify-content: center;
-align-items: center;
-flex-direction:row;
-flex-wrap:  nowrap;
-padding-top: 51px;
-margin-left: 23px;
-  @include desktop() {    
-        padding-top: 0px;
-        margin: 0 auto;
-    }
+
+@include desktop() {    
+    align-items: center;
+    justify-content: flex-start;
+}
+@include phones() {
+    flex-direction:column;
+    justify-content: flex-start;
+}
 
 }
 &__info{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    width: 69%;
     align-items: flex-end;
-    margin-right: 160px;
-    @include desktop() {    
+    margin-right: 10rem;
+    width: 19%;
+    margin-top: -20.5rem;
+    @include desktop() {  
+        width: 24%;  
         margin-right: 13rem;
+        margin-top: -4rem;
     }
     @include tablets() {
-        margin: 0;
         align-items: flex-start;
+        width: 39%;
+        margin-right: 4em;
+        margin-top: 1rem;
     }
+    @include phones() {
+        width: 100%;
+        align-items: center;
+        margin-right: 0em;
 }
-&__info-tablets{
+}
+&__info-table{
     @include tablets() {
        margin-left: -33px;
     }
+    @include phones() {
+    margin-left: 0rem;
+    margin-bottom: 3rem;
+}
 }
 &__info-pict{
     height: 205px;
@@ -55,14 +70,24 @@ margin-left: 23px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 3.25rem;
+    @include phones() {
+    margin-bottom: 0.25rem;
+}
 }
 &__text{
-    width: 50%;
-    padding-right: 80px;
+    width: 36%;
+    margin-top: -20.5rem;
     @include desktop() {    
-        width: 80%;
-        padding-right:0;
+        width: 52%;
+        margin-top: -4rem;
     }
+    @include tablets() {
+    margin-top: -0.5rem;
+    }
+
+    @include phones() {
+        width: 100%;
+}
 }
 &__text-hi{
     font-weight:600;
@@ -75,9 +100,15 @@ margin-left: 23px;
     font-size: 16px; 
     color: #fff;
     line-height:30px;
+    margin-bottom: 6rem;
     @include tablets() {
         margin-bottom: 2.8125rem;
     }
+    @include phones() {
+    font-size: 1.08rem;
+    line-height: 1.875rem;
+    margin-bottom: 2.2rem;
+}
 }  
 &__text-comment{
     font-style: italic;
@@ -87,5 +118,10 @@ margin-left: 23px;
 
 &__header{
 margin-bottom:32px;
+    @include phones() {
+    font-size: 30px;
+    line-height:36px;
+    margin-bottom:3rem;
+}
 }
 }

@@ -6,6 +6,14 @@
         flex-direction: row;
         justify-content: space-between;
         height:370px;
+		@include tablets() {
+        height: 35.125rem;
+		}  
+        @include phones() {
+        height: 53.125rem;
+        flex-direction: column;
+		}
+            
     }
     &__head{
         display: flex;
@@ -24,6 +32,9 @@
             width: 100%;
             margin-bottom: 30px;
         }
+        @include phones() {    
+            margin-bottom: 2.2rem;
+        }        
     }
     &__info{
         display:flex;
@@ -34,6 +45,11 @@
             margin-top: 0;
             width: 64%;
         }
+        @include phones() {    
+            width: 100%;
+        }
+
+
     }
     &__info-name{
         font-size: 18px;
@@ -41,11 +57,18 @@
         font-weight: bold;
         margin-bottom: 35px;
         text-transform: uppercase;
+        @include phones() {    
+            margin-bottom: 0.7rem;
+        }
     }
     &__info-text{
         font-size: 16px;
         color:#34383a;
         font-weight: 400;
+        @include phones() {    
+            margin-bottom: 2rem;
+        }
+
     }
     &__content{
         display:flex;
@@ -55,10 +78,21 @@
         @include desktop() {
             width: 76%;
         }
+        @include tablets() {
+            margin-bottom: 3.4357rem;
+		}  
+        @include phones() {
+            width: 100%;
+            margin-top: 0;
+		}
+
     }
     &__group{
         display:flex;  
         width: 100%;
+        @include desktop() {    
+            flex-direction: column;
+        }
     }
     &__block{
         display:flex;
@@ -74,13 +108,33 @@
             width: 50%;
             margin-right: -0.875rem;
         }
+        @include tablets() {    
+            width:100%;
+            margin-bottom: 4rem;
+        }
+        @include phones() {    
+            margin-bottom: 3rem;
+        }
+
+
     }
     &__block-text{
         margin-bottom: 37px;
+        @include tablets() {    
+            margin-bottom: 0.5rem;
+        }     
+        @include phones() {
+        width: 70%;    
+        margin-bottom: 1rem;
+        } 
+          
     }
     &__blockquote{
         margin:0;
         margin-bottom: 26px;
+        @include tablets() {    
+            margin-bottom: 0.5rem;
+        }  
     }
     &__blockquote-autor{
         font-style: italic;

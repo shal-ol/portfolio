@@ -1,30 +1,56 @@
-.slider
-	.slider__images
-		ul.slider__images-list
-			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 1')
-			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 2')
-			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 3')
-			li.slider__images-item
-				+image('content/work_big_1.png', 'slider__images-pict', 'слайд 4')
+script(type="text/x-template")#slider-container
+	.slider
+		display(
+			:works="works"
+			:currentWork = "currentWork"
+			:currentIndex = "currentIndex"
+			@slide="handleSlide"
+		)
+		info(
+			:currentWork = "currentWork"
+		)
+
+script(type="text/x-template")#slider-display
+	.slider__images(:data-slide="currentIndex + 1")
+		.slider__images-list
+			.slider__images-item.slider__images-item--active
+				img(:src="currentWork.photo").slider__images-pict
+		imgmin(
+			:works="works",
+			:currentWork = "currentWork"
+		)
+		btns(
+			@slide="direction => $emit('slide',direction)"
+		)
+
+script(type="text/x-template")#slider-imgmin
 	ul.slider__imagesmin
-		li.slider__imagesmin-item.slider__imagesmin-item--active
-			+image('content/work_1.png', 'slider__imagesmin-pict', 'мини-слайд 1')
-		li.slider__imagesmin-item
-			+image('content/work_2.png', 'slider__imagesmin-pict', 'мини-слайд 2')
-		li.slider__imagesmin-item
-			+image('content/work_3.png', 'slider__imagesmin-pict', 'мини-слайд 3')
-		li.slider__imagesmin-item
-			+image('content/work_4.png', 'slider__imagesmin-pict', 'мини-слайд 4')
-	ul.slider__numbers
-		li.slider__numbers-item.slider__numbers-item--active 2
-		li.slider__numbers-item 2
-		li.slider__numbers-item 3
-		li.slider__numbers-item 4
+		li.slider__imagesmin-item(
+			v-for="work in works"
+			:class="{active: work.id === currentWork.id}"
+			)
+			img(:src="work.photo").slider__imagesmin-pict
+
+
+script(type="text/x-template")#slider-btns
 	.slider__controls
-		button.slider__btn.slider__btn-next
+		button(@click="$emit('slide','next')").slider__btn.slider__btn-next
 			+icon('arrow-down', 'slider__btnnext-pict slider__btn-pict')
-		button.slider__btn.slider__btn-pref.slider__btn--blocked
+		button(@click="$emit('slide','pref')").slider__btn.slider__btn-pref.slider__btn--blocked
 			+icon('arrow-down', 'slider__btnpref-pict slider__btn-pict ')
+
+script(type="text/x-template")#slider-info
+	.work__descr
+		tags(
+			:tags="tagsArray"
+		)
+		h3.work__descr-title {{currentWork.title}}
+		p.work__descr-text {{currentWork.desc}}
+		a.work__descr-link(:href="currentWork.link")
+			+icon('link', 'work__descr-ref')
+			.work-descr__link-text Посмотреть сайт
+
+script(type="text/x-template")#slider-tags
+	ul.work__skills-list
+		li.work__skills-item(v-for="tag in tags")
+			.work__skills-tag {{tag}}

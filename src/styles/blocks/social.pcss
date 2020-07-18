@@ -1,4 +1,4 @@
-.social{
+.social{	
 	&__item{
 		margin-right: 36px;
 		&:last-child{
@@ -30,6 +30,11 @@
 				&:hover{
 					color: #ff9a00;
 					}   
+        @include phones() {
+					height: 3.4rem;
+					width: 3.4rem;
+					margin-right: 1.9rem;
+  		  }
 				}
 			&__icon{
 				height: 25px;
@@ -42,4 +47,9 @@
 				}
 			}
 		}
+	&--header{
+		@include phones() {
+       display: none;
+    }
+	}
 }
